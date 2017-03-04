@@ -1,0 +1,1 @@
+# starter for node apps
