@@ -1,0 +1,115 @@
+/* CORE: global styles */
+
+
+html {
+	min-height: 100%;
+	background: #ffffff;
+	color: @darkGray;
+}
+body {
+	min-width: 320px;
+	height: 100%;
+	font-family: 'Roboto';
+	font-size: @baseFontSize;
+	line-height: @baseLineHeight;
+
+	@media screen and (max-width: 1279px) {
+		font-size: @baseFontSize - 1;
+		line-height: @baseLineHeight - 2;
+	}
+}
+
+h1 {
+	color: #000000;
+	font-family: 'STIXGeneral';
+	font-size: @bigFontSize;
+	font-style: italic;
+	font-weight: normal;
+	line-height: @bigLineHeight;
+
+	@media screen and (max-width: 1279px) {
+		font-size: @bigFontSize - 4;
+		line-height: @bigLineHeight - 4;
+	}
+	@media screen and (max-width: 600px) {
+		font-size: @bigFontSize - 10;
+		line-height: @bigLineHeight - 10;
+	}
+	@media screen and (max-width: 479px) {
+		font-size: @bigFontSize - 20;
+		line-height: @bigLineHeight - 20;
+	}
+}
+h2 {
+	color: @lightGray;
+	font-family: 'Roboto';
+	font-size: 14px;
+	font-weight: normal;
+	letter-spacing: 10px;
+	line-height: 20px;
+	text-transform: uppercase;
+
+	@media screen and (max-width: 600px) {
+		font-size: 13px;
+		line-height: 18px;
+	}
+	@media screen and (max-width: 479px) {
+		font-size: 12px;
+		line-height: 16px;
+		letter-spacing: 8px;
+	}
+	&.bolder {
+		font-weight: bold;
+		letter-spacing: 17px;
+
+		@media screen and (max-width: 768px) and (min-width: 568px) {
+			letter-spacing: 13px;
+		}
+		@media screen and (max-width: 567px) and (min-width: 381px) {
+			letter-spacing: 9px;
+		}
+		@media screen and (max-width: 380px) {
+			letter-spacing: 7px;
+		}
+	}
+}
+
+p,
+ul,
+ol,
+address {
+	margin-bottom: @baseLineHeight;
+}
+p + ul,
+p + ol {
+	margin-top: -@baseLineHeight;
+}
+ol {
+	padding-left: 22px;
+}
+ol ol,
+ul ul,
+ol ul,
+ul ul,
+nav ul {
+	margin-bottom: 0;
+}
+ol li {
+	list-style: decimal;
+}
+
+a {
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+
+	&:hover {
+		color: @lightGray;
+		text-decoration: underline;
+	}
+}
+
+::selection {
+	background: @darkGray;
+	color: @lightGray;
+}

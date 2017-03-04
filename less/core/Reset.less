@@ -1,0 +1,104 @@
+/* CORE: reset styles */ 
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+
+	&:before,
+	&:after {
+		box-sizing: border-box;
+	}
+}
+
+button,
+input {
+	&::-moz-focus-inner {
+		padding: 0;
+		border: 0;
+	}
+}
+img,
+fieldset {
+	border: none;
+}
+
+a,
+object {
+	outline: none !important;
+}
+input,
+textarea,
+button {
+	&:focus {
+		&:extend(a);
+	}
+}
+
+li {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size:100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	font-weight: bold;
+}
+
+button {
+	cursor: pointer;
+}
+input{
+	&[type="button"],
+	&[type="reset"],
+	&[type="submit"],
+	&[type="checkbox"],
+	&[type="radio"] {
+		&:extend(button);
+	}
+}
+
+button,
+input {
+	&[disabled] {
+		cursor: default;
+	}
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section,
+summary,
+video,
+img,
+object,
+iframe {
+	display: block;
+}
