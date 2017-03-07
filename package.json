@@ -1,0 +1,16 @@
+{
+  "name": "starter",
+  "version": "1.0.0",
+  "author": "Bartosz Dębicki",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bdebicki/starter"
+  },
+  "description": "projects starter",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-minify-css": "^1.2.4"
+  }
+}

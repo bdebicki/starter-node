@@ -1,0 +1,117 @@
+/* CORE: mixins set */
+
+
+// global show / hide
+.visible(@pointeEvents: false) {
+	opacity: 1;
+	visibility: visible;
+
+	& when (@pointeEvents = true) {
+		pointer-events: auto;
+	}
+}
+.hidden(@pointeEvents: false) {
+	opacity: 0;
+	visibility: hidden;
+
+	& when (@pointeEvents = true) {
+		pointer-events: none;
+	}
+}
+
+
+// box clearing stuff - with pseudo-element :after
+.clearFix-after() {
+	&:after {
+		display: block;
+		height: 0;
+		clear: both;
+		content: '.';
+		overflow: hidden;
+	}
+}
+
+
+// strech element
+.strechPosition(@type: absolute, @value: 0) {
+	position: @type;
+	top: @value;
+	right: @value;
+	bottom: @value;
+	left: @value;
+}
+
+
+// disable state - prevent clicks and optionally selection on mouse select
+.disabled(@opacity: 0.5, @userSelect: true) {
+	opacity: @opacity;
+	pointer-events: none;
+
+	& when (@userSelect = true) {
+		user-select: none;
+	}
+}
+
+
+// text ellipsis - setting @maxWidth: initial won't generate max-width property
+.text-ellipsis(@maxWidth: 100%) {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+
+	& when (isnumber(@maxWidth)) {
+		max-width: @maxWidth;
+	}
+}
+
+
+// centering flex
+.centering-flex() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+// centering transform
+.center-transform(@position: absolute, @offsetX: 50%, @offsetY: 50%) {
+	position: @position;
+	top: @offsetY%;
+	left: @offsetX;
+	transform: translate(-@offsetX, -@offsetY);
+}
+
+
+// css triangle
+.css-triangle(@direction: up, @width: 10px, @height: 10px, @color: #a6a6a6) {
+	content: '';
+	display: block;
+
+	// Up / Bottom
+	& when (@direction = up) {
+		border-bottom: @height solid @color;
+	}
+	& when (@direction = down) {
+		border-top: @height solid @color;
+	}
+	& when (@direction = up), (@direction = down)  {
+		margin-top: -@height / 2;
+		margin-left: -@width / 2;
+		border-left: (@width / 2) solid transparent;
+		border-right: (@width / 2) solid transparent;
+	}
+
+	// Left / Right
+	& when (@direction = left) {
+		border-right: @height solid @color;
+	}
+	& when (@direction = right) {
+		border-left: @height solid @color;
+	}
+	& when (@direction = left), (@direction = right)  {
+		margin-top: -@width / 2;
+		margin-left: -@height / 2;
+		border-top: (@width / 2) solid transparent;
+		border-bottom: (@width / 2) solid transparent;
+	}
+}
