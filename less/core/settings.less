@@ -1,0 +1,134 @@
+/* CORE: global styles */
+
+//local vars
+@defaultFontColor: #505050;
+@selectionColor: @defaultFontColor;
+@selectionFontColor: @lightGray;
+@linkColor: #1161BC;
+@h1color: @lightGray;
+@h2color: @defaultFontColor;
+@h3color: @defaultFontColor;
+@h4color: @defaultFontColor;
+@h5color: @defaultFontColor;
+@defaultFontSize: 14px;
+@h1fontSize: 32px;
+@h2fontSize: 24px;
+@h3fontSize: 18px;
+@h4fontSize: @defaultFontSize;
+@h5fontSize: 12px;
+@defaultLineHeight: 18px;
+@h1lineHeight: 40px;
+@h2lineHeight: 28px;
+@h3lineHeight: 22px;
+@h4lineHeight: @defaultLineHeight;
+@h5lineHeight: 14px;
+
+
+html {
+	min-height: 100%;
+	background: #ffffff;
+	color: @defaultFontColor;
+}
+body {
+	min-width: 320px;
+	height: 100%;
+	font-family: Arial, sans-serif;
+	font-size: @defaultFontSize;
+	line-height: @defaultLineHeight;
+
+	@media screen and (max-width: 1279px) {
+		font-size: @defaultFontSize - 1;
+		line-height: @defaultLineHeight - 2;
+	}
+}
+
+h1 {
+	color: @h1color;
+	font-size: @h1fontSize;
+	line-height: @h1lineHeight;
+
+	@media screen and (max-width: 1279px) {
+		font-size: @h1fontSize - 2;
+		line-height: @h1lineHeight - 2;
+	}
+	@media screen and (max-width: 600px) {
+		font-size: @h1fontSize - 3;
+		line-height: @h1lineHeight - 3;
+	}
+	@media screen and (max-width: 479px) {
+		font-size: @h1fontSize - 4;
+		line-height: @h1lineHeight - 4;
+	}
+}
+h2 {
+	color: @h2color;
+	font-size: @h2fontSize;
+	line-height: @h2lineHeight;
+
+	@media screen and (max-width: 600px) {
+		font-size: @h2fontSize - 2;
+		line-height: @h2lineHeight - 2;
+	}
+	@media screen and (max-width: 479px) {
+		font-size: @h2fontSize - 3;
+		line-height: @h2lineHeight - 3;
+	}
+}
+h3 {
+	color: @h3color;
+	font-size: @h3fontSize;
+	line-height: @h3lineHeight;
+}
+h4 {
+	color: @h4color;
+	font-size: @h4fontSize;
+	line-height: @h4lineHeight;
+}
+h5 {
+	color: @h5color;
+	font-size: @h5fontSize;
+	line-height: @h5lineHeight;
+}
+
+p,
+ul,
+ol,
+address {
+	margin-bottom: @defaultLineHeight;
+}
+p {
+	ul,
+    ol {
+		margin-top: -@defaultLineHeight;
+	}
+}
+ol {
+	padding-left: 22px;
+
+	li {
+		list-style: decimal;
+	}
+}
+ol,
+ul,
+nav {
+	& & {
+		margin-bottom: 0;
+	}
+}
+
+a {
+	color: @linkColor;
+	font-weight: bold;
+	text-decoration: none;
+
+	&:hover {
+		color: @defaultFontColor;
+		text-decoration: underline;
+	}
+}
+
+::selection {
+	background: @selectionColor;
+	color: @selectionFontColor;
+}
