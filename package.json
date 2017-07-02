@@ -9,12 +9,12 @@
   "description": "projects starter for node apps",
   "dependencies": {
     "gulp": "^3.9.1",
-    "gulp-less": "^3.3.0",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-uglify": "^2.0.0",
+    "gulp-less": "^3.3.2",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-minify-css": "^3.5.0",
+    "gulp-uglify": "^3.0.0",
     "gulp-symlink": "^2.1.4",
-    "express": "^4.14.0",
-    "del": "^2.2.2"
+    "express": "^4.15.3",
+    "del": "^3.0.0"
   }
 }
