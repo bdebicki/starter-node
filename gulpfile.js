@@ -3,7 +3,6 @@ var gulp = require('gulp'),
     less = require('gulp-less'),
     autoprefixer = require('gulp-autoprefixer'),
     minify = require('gulp-minify-css'),
-    concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     symlink = require('gulp-symlink'),
     del = require('del'),
@@ -47,14 +46,12 @@ gulp.task('less:minify', function() {
 // build js file task
 gulp.task('js', function() {
     return gulp.src(jsFilesList)
-               .pipe(concat(jspackageFile))
                .pipe(gulp.dest(jsFileDest));
 });
 
 // build minified js file task
 gulp.task('js:minify', function() {
     return gulp.src(jsFilesList)
-               .pipe(concat(jspackageFile))
                .pipe(uglify())
                .pipe(gulp.dest(jsFileDest));
 });
