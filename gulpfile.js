@@ -41,6 +41,7 @@ gulp.task('clean:public', function () {
 // build css file task
 gulp.task('less', function() {
     return gulp.src(lessSrcPackageFiles)
+               .on('error', function(error) { console.log(error.toString()); this.emit('end'); })
                .pipe(less())
                .pipe(autoprefixer({ browsers: ['last 2 versions', 'ie >= 10'] }))
                .pipe(gulp.dest(cssDestFolder));
@@ -49,6 +50,7 @@ gulp.task('less', function() {
 // build minified css file task
 gulp.task('less:minify', function() {
     return gulp.src(lessSrcPackageFiles)
+	           .on('error', function(error) { console.log(error.toString()); this.emit('end'); })
                .pipe(less())
                .pipe(autoprefixer({ browsers: ['last 2 versions', 'ie >= 10'] }))
                .pipe(minify())
