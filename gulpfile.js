@@ -2,7 +2,7 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
-var minify = require('gulp-minify-css');
+var cleanCss = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
@@ -53,7 +53,7 @@ gulp.task('less:minify', function() {
 	           .on('error', function(error) { console.log(error.toString()); this.emit('end'); })
                .pipe(less())
                .pipe(autoprefixer({ browsers: ['last 2 versions', 'ie >= 10'] }))
-               .pipe(minify())
+               .pipe(cleanCss())
                .pipe(gulp.dest(cssDestFolder));
 });
 
