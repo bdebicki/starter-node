@@ -8,7 +8,7 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 var babel = require('babelify');
-var symlink = require('gulp-symlink');
+var symlink = require('gulp-sym');
 var del = require('del');
 
 var publicFolder = './public/';
