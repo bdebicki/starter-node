@@ -7,22 +7,10 @@
   ],
   "env": {
     "browser": true,
-    "node": true,
     "jest": true
   },
   "root": true,
   "rules": {
-
-    ////////// Variables //////////
-
-    "no-use-before-define": [          // disallow use of variables before they are defined (airbnb overrided - added functions flase) (19 ERRORS)
-      "error",
-      {
-        "functions": false
-      }
-    ],
-
-
     ////////// Stylistic Issues //////////
 
     "indent": [2, "tab"],
@@ -61,22 +49,6 @@
         "asyncArrow": "always"
       }
     ],
-
-
-    ////////// Legacy //////////
-
-    "complexity": [                    // enforce a maximum cyclomatic complexity allowed in a program
-      "error",
-      10
-    ],
-    "max-len": [                       // enforce a maximum line length (473 ERRORS)
-      "error",
-      {
-        "code": 120,
-        "ignorePattern": "import .* from .*;$"
-      }
-    ],
-    "import/no-cycle": [0],
 
     ////////// ECMAScript 6 //////////
 
