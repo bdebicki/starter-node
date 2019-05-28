@@ -7,11 +7,11 @@ const WriteFilePlugin = require('write-file-webpack-plugin');
 
 const config = {
 	devtool: 'eval',
-	entry: ['./src/js/app.js', './src/less/app.less'],
+	entry: ['./src/js/application.js', './src/less/application.less'],
 	output: {
 		path: path.resolve(__dirname, 'public'),
-		filename: 'wiraof.js',
-		sourceMapFilename: 'maps/wiraof.js.map',
+		filename: 'application.js',
+		sourceMapFilename: 'maps/application.js.map',
 		publicPath: '/public',
 	},
 	module: {
@@ -33,7 +33,7 @@ const config = {
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: 'wiraof.css',
+			filename: 'application.css',
 		}),
 		new HtmlWebpackPlugin({
 			template: 'src/views/index.html',
@@ -42,16 +42,13 @@ const config = {
 			{ from: 'src/images/*.png', to: 'images/[name].png' },
 		]),
 		new CopyWebpackPlugin([
-			{ from: 'src/videos/*.webm', to: 'videos/[name].webm' },
-		]),
-		new CopyWebpackPlugin([
 			{ from: 'src/fonts/*.woff', to: 'fonts/[name].woff' },
 		]),
 		new CopyWebpackPlugin([
 			{ from: 'src/fonts/*.woff2', to: 'fonts/[name].woff2' },
 		]),
 		new WriteFilePlugin({
-			test: /\.(json|png|webm|woff|woff2)$/,
+			test: /\.(json|png|woff|woff2)$/,
 		}),
 	],
 };
