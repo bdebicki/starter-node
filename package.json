@@ -1,26 +1,63 @@
 {
-  "name": "starter-node",
+  "name": "starter-js-app",
   "version": "2.0.0",
   "author": "Bartosz Dębicki",
   "repository": {
     "type": "git",
     "url": "git://github.com/bdebicki/starter-node"
   },
-  "description": "projects starter for node apps",
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-less": "^3.3.2",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-clean-css": "^3.5.0",
-    "vinyl-source-stream": "^1.1.0",
-    "vinyl-buffer": "^1.0.0",
-    "browserify": "^14.4.0",
-    "babelify": "^7.3.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "gulp-uglify": "^3.0.0",
-    "gulp-sym": "^1.0.2",
-    "express": "^4.15.3",
-    "del": "^3.0.0"
+  "description": "projects starter for js apps",
+  "engines": {
+    "node": "9.11.1",
+    "npm": "5.6.0"
+  },
+  "scripts": {
+    "symlink-hooks": "./hooks/symlink-hooks",
+    "eslint-check": "eslint ./src ./tools --ext .js",
+    "test": "jest",
+    "build": "webpack --mode production",
+    "watch": "webpack-dev-server --content-base public"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/js/**/*.js"
+    ],
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "transform": {
+      ".*": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "verbose": true
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.1.5",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.4",
+    "browserslist": "^4.3.4",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^1.0.1",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-import": "^2.13.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "write-file-webpack-plugin": "^4.4.1"
   }
 }

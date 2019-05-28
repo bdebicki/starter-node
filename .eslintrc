@@ -1,0 +1,109 @@
+{
+  "extends": "airbnb-base",
+  "parser": "babel-eslint",
+  "plugins": [
+    "import",
+    "filenames"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "root": true,
+  "rules": {
+
+    ////////// Variables //////////
+
+    "no-use-before-define": [          // disallow use of variables before they are defined (airbnb overrided - added functions flase) (19 ERRORS)
+      "error",
+      {
+        "functions": false
+      }
+    ],
+
+
+    ////////// Stylistic Issues //////////
+
+    "indent": [2, "tab"],
+    "no-tabs": 0,                     // turn on tabs
+    "comma-dangle": [                 // enforce consistent comma style (airbnb overrided - functions)
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ],
+    "function-paren-newline": [
+      "error",
+      "consistent"
+    ],
+    "no-plusplus":  [                  // disallow the unary operators ++ and -- (airbnb overrided - added "allowForLoopAfterthoughts")
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "no-underscore-dangle": [          // disallow dangling underscores in identifiers (airbnb overrided "allowAfterThis")
+      "error",
+      {
+        "allowAfterThis": true
+      }
+    ],
+    "space-before-function-paren": [   // enforce consistent spacing before function definition opening parenthesis (airbnb overrided – never use space in anonymous functions)
+      "error",
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+
+
+    ////////// Legacy //////////
+
+    "complexity": [                    // enforce a maximum cyclomatic complexity allowed in a program
+      "error",
+      10
+    ],
+    "max-len": [                       // enforce a maximum line length (473 ERRORS)
+      "error",
+      {
+        "code": 120,
+        "ignorePattern": "import .* from .*;$"
+      }
+    ],
+    "import/no-cycle": [0],
+
+    ////////// ECMAScript 6 //////////
+
+    "arrow-parens": [                           // require parentheses around arrow function arguments (airbnb overrided "as needed" -> "always")
+      "error",
+      "always"
+    ],
+
+    ////////// File names //////////
+
+    "filenames/match-exported": "error"
+  },
+
+  "overrides": [
+    {
+      "files": [ "**/__tests__/*.js" ],
+      "globals": {
+        "expect": false,
+        "describe": false,
+        "it": false
+      },
+      "rules": {
+        "filenames/match-regex": [
+          "error",
+          "^[a-zA-Z]+\\.test$"
+        ]
+      }
+    }
+  ]
+}
